@@ -15,3 +15,9 @@ You need to compile before running it::
 
     make
     make start
+
+Todo
+----
+
+ - Read the following:
+   http://20bits.com/articles/erlang-a-generalized-tcp-server/
