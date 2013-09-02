@@ -1,5 +1,6 @@
 -module(irc).
 -export([start/0]).
+-export([handle_command/2]).
 -import(lists, [reverse/1]).
 -import(splitter).
 
@@ -84,7 +85,7 @@ handle_event(Socket, {privmsg, User, Channel, Message}) ->
     case Message of
         % Addressed to us, this is a command!
         [":MrSplitMan:"|Parameters] ->
-            handle_command(Socket, Parameters);
+            ?MODULE:handle_command(Socket, Parameters);
         % Don't understand... ignore it.
         _ ->
             nothing
